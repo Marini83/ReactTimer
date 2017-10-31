@@ -21,13 +21,15 @@ var app = express();
 //add functionality to express application
 
 const PORT = process.env.PORT || 3000;
-app.use(function (req, res, next){
-    if (req.headers['x-forwarded-proto'] === 'http') {
-        next();
-    } else {
-        res.redirect('http://' + req.hostname + req.url);
-    }
-});
+
+//comment out if testing local 
+// app.use(function (req, res, next){
+//     if (req.headers['x-forwarded-proto'] === 'http') {
+//         next();
+//     } else {
+//         res.redirect('http://' + req.hostname + req.url);
+//     }
+// });
 
 app.use(allowCrossDomain);
 
