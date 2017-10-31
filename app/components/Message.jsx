@@ -18,8 +18,8 @@ var Message = ({temp, location} ) => {
 	// var {temp,location} = props;
 	return (
 			<div >
-				<h3>Message Component</h3>
-				Temperature in {location} is {Math.floor(temp)}
+				<h3 className="text-center">
+				Temperature in {location} is {Math.floor(temp)} </h3>
 			</div>
 			
 		);
