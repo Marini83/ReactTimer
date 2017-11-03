@@ -1,51 +1,34 @@
 var React = require('react');
-var {Link, IndexLink} = require('react-router');
+var {Link,IndexLink} = require('react-router');
 
 var Nav =  React.createClass({
-	onSearch: function(e){
-		e.preventDefault();
-		var locationnav = this.refs.locationnav.value;
-		var encodedLocation = encodeURIComponent(locationnav);
-		if (locationnav.length > 0){
-			this.refs.locationnav.value = '';
-			window.location.hash = '#/?location=' + encodedLocation;
-		}		
-	},
- render: function () {
- 		return (
-			<div className="top-bar">
-				<div className="top-bar-left">
-					<ul className="menu">
-					<li className="menu-text">React Weather App </li>
-						<li>
-							<IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}} >Get Weather </IndexLink>
-						</li>
-						<li>
-							<Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}} > About </Link>
-						</li>
-						<li>
-							<Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}} >Examples </Link>
-						</li>
-					</ul>
-				</div>
-				<div className="top-bar-right">
-					<form onSubmit={this.onSearch}>
-						<ul className="menu">
-							<li>
-								<input type="search" placeholder="Search weather by city" ref="locationnav"/>
-							</li>
-							<li>
-								<input type="submit" className="button" value="Get Weather" />
-							</li>
-
-
-						</ul>
-					</form>
-				</div>
-			</div>
-		);
- }
-});
+    render: function(){
+            return (
+                <div className="top-bar">
+                    <div className="top-bar-left">
+                        <ul className="menu">
+                        <li className="menu-text">React Timer App </li>
+                            <li>
+                                <IndexLink to="/" activeClassName="active-link" activeStyle={{fontWeight: 'bold'}} >Timer </IndexLink>
+                            </li>
+                            <li>
+                                <Link to="/countdown" activeClassName="active-link" activeStyle={{fontWeight: 'bold'}} >CountDown</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="top-bar-right">
+                    <ul className="menu">
+                        <li className="menu-text">
+                            <p activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Created by</p>
+                        </li>
+                        <li>
+                            <a href="https://i.ytimg.com/vi/b584-AvPh8I/maxresdefault.jpg" target="_blank" activeClassName="active" activeStyle={{fontWeight: 'bold'}} >Marin Rusi</a>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+            );
+    }
+}); 
 
 module.exports = Nav;
-
