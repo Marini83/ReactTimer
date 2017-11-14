@@ -5,14 +5,14 @@ var Main = require('Main');
 var CountDown = require('CountDown');
 var Timer = require('Timer');
 // Load foundation 
-
-require('style!css!foundation-sites/dist/foundation.min.css');
+$(document).foundation();
+// require('style!css!foundation-sites/dist/foundation.min.css');
 //app css
 require('style!css!sass!applicationStyles');
 
 
 
-$(document).foundation();
+
 
 ReactDOM.render(
 		<Router history={hashHistory}>
